@@ -5,13 +5,19 @@ import { RouterModule } from '@angular/router';
 import { SharedModule } from '../shared/shared.module';
 import { NgbModule } from "@ng-bootstrap/ng-bootstrap";
 import { HttpClientModule } from "@angular/common/http";
+import {AccordionModule} from 'primeng/accordion';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from '../feature/home/home.component';
 import { HeaderComponent } from '../feature/header/header.component';
 import { FooterComponent } from '../feature/footer/footer.component';
-import { PagenotfoundComponent } from '../feature/pagenotfound/pagenotfound.component';
+import { PageNotFoundComponent } from '../feature/page-not-found/page-not-found.component';
+import { AboutComponent } from '../feature/about/about.component';
+import {TableModule} from 'primeng/table';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import {ButtonModule} from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -19,7 +25,8 @@ import { PagenotfoundComponent } from '../feature/pagenotfound/pagenotfound.comp
     HomeComponent,
     HeaderComponent,
     FooterComponent,
-    PagenotfoundComponent
+    PageNotFoundComponent,
+    AboutComponent
   ],
   imports: [
     BrowserModule,
@@ -29,8 +36,12 @@ import { PagenotfoundComponent } from '../feature/pagenotfound/pagenotfound.comp
     ReactiveFormsModule,
     FormsModule,
     NgbModule,
-    HttpClientModule
-    
+    HttpClientModule,
+    AccordionModule,
+    BrowserAnimationsModule,
+    TableModule,
+    FontAwesomeModule,
+    ButtonModule
   ],
   providers: [],
   bootstrap: [AppComponent],

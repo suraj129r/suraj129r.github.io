@@ -1,0 +1,67 @@
+<div>
+    <div class="logo mx-auto py-1">
+        <img id="profile" src="../../../assets/images/profile.jpeg" alt="picture">
+    </div>
+    <div>
+        <p-accordion [multiple]="true">
+            <p-accordionTab header="Personal Information" id="firstaccordion" styleClass="paddingClass">
+                <div class="mx-auto">
+                    <p-table [value]="personalinfo.personal" [resizableColumns]="true" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+                        <!-- <ng-template pTemplate="header">
+                            <tr>
+                                <th>Vin</th>
+                            </tr>
+                        </ng-template> -->
+                        <ng-template pTemplate="body" let-rowdata>
+                            <tr>
+                                <td>{{rowdata.header}}</td>
+                                <td>{{rowdata.field}}</td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+                <div style="padding-left: 53%;">
+                    <a href={{personalinfo.social[0].field}} target="_blank">
+                        <i class="pi pi-instagram p-1" style="font-size: 2rem"></i>
+                    </a>
+                    <a href={{personalinfo.social[1].field}} target="_blank">
+                        <i class="pi pi-facebook p-1" style="font-size: 2rem"></i>
+                    </a>
+                </div>
+            </p-accordionTab>
+            <p-accordionTab header="Education Qualifications">
+                <div class="col-10 mx-auto">
+                    <p-table [value]="personalinfo.education" dataKey="name" responsiveLayout="scroll" >
+                        <ng-template pTemplate="body" let-rowdata let-expanded="expanded">
+                            <tr>
+                                <td style="width: 50px;">
+                                    <button type="button" pButton pRipple [pRowToggler]="rowdata"
+                                        class="p-button-text p-button-rounded p-button-plain"
+                                        [icon]="expanded ? 'pi pi-minus' : 'pi pi-plus'"></button>
+                                </td>
+                                <td>{{rowdata.name }} ({{rowdata.details[2].field}})</td>
+                            </tr>
+                        </ng-template>
+                        <ng-template pTemplate="rowexpansion" let-rowdata>
+                            <tr>
+                                <td colspan="7" style="padding: unset !important;">
+                                        <p-table [value]="rowdata.details" dataKey="Year" styleClass="p-datatable-striped">
+                                            <ng-template pTemplate="body" let-data>
+                                                <tr>
+                                                    <td class="text-center">{{data.header}}</td>
+                                                    <td class="text-center">{{data.field}}</td>
+                                                </tr>
+                                            </ng-template>
+                                        </p-table>
+                                </td>
+                            </tr>
+                        </ng-template>
+                    </p-table>
+                </div>
+            </p-accordionTab>
+            <p-accordionTab header="Professional Career" styleClass="dark-panel">
+                <ng-template pTemplate="content">Body Content</ng-template>
+            </p-accordionTab>
+        </p-accordion>
+    </div>
+</div>

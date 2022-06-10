@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import { AboutComponent } from '../feature/about/about.component';
 import { HomeComponent } from '../feature/home/home.component';
-import { PagenotfoundComponent } from '../feature/pagenotfound/pagenotfound.component';
+import { PageNotFoundComponent } from '../feature/page-not-found/page-not-found.component';
+
 
 const routes: Routes = [
   {
@@ -14,8 +16,12 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
+    path: 'about',
+    component: AboutComponent
+  },
+  {
     path: 'page-not-found',
-    component: PagenotfoundComponent
+    component: PageNotFoundComponent
   },
   {
     path: '**',

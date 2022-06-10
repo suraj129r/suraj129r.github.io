@@ -1,0 +1,18 @@
+.logo {
+    width: 150px;
+    float: inline-end;
+}
+
+.logo img {
+    width: 300px;
+    height: 300px;
+    border-radius: 150px;
+}
+
+::ng-deep .p-accordion .p-accordion-content {
+    padding: unset;
+}
+a:link {
+    color: unset;
+    text-decoration: none;
+  }
